@@ -102,8 +102,8 @@ export default function Assistant({ component }) {
         {phase === -100 && (
           <div className="w-full flex flex-col justify-between pt-4">
             <ul className="flex flex-col pl-2 font-semibold">
-              {answer.current.map((x) => (
-                <li>{x}</li>
+              {answer.current.map((x, index) => (
+                <li key={index}>{x}</li>
               ))}
             </ul>
           </div>

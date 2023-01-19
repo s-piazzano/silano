@@ -1,4 +1,5 @@
-import ReactMarkdown from "react-markdown";
+import { Remark } from "react-remark";
+
 import Link from "next/link";
 
 export default function Footer({ layout }) {
@@ -10,10 +11,7 @@ export default function Footer({ layout }) {
             return (
               <div key={x.id} className="flex flex-col">
                 <h2>{x.name}</h2>
-                <ReactMarkdown
-                  className="mt-4 text-sm"
-                  children={x.description}
-                />
+                <Remark className="mt-4 text-sm">{x.description}</Remark>
               </div>
             );
           }

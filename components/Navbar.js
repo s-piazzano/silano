@@ -11,11 +11,17 @@ export default function Navbar({ imageUrl, hours, contact, layout }) {
       <div className=" w-full h-[32px] flex px-4 md:px-16 bg-forest justify-center md:justify-between items-center text-white text-sm font-thin">
         <h6 className="hidden md:block">{hours}</h6>
         <div className="flex divide-x">
-          <a target="_blank" className="px-2" href="tel:+390161930380">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            className="px-2"
+            href="tel:+390161930380"
+          >
             Tel: 0161 930380
           </a>
           <a
             target="_blank"
+            rel="noreferrer"
             className="px-2"
             href="https://wa.me/+393929898074"
           >

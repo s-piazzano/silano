@@ -1,6 +1,6 @@
 import { getMenu, getPage, getAllPages } from "../lib/api";
 
-import ReactMarkdown from "react-markdown";
+import { Remark } from "react-remark";
 
 import Layout from "../components/layout/default";
 import Collapse from "../components/ui/Collapse";
@@ -19,10 +19,10 @@ export default function Page({
       <div className="w-full h-full px-4 md:px-16 py-8 flex flex-col lg:flex-row">
         <div className="w-full lg:w-8/12">
           <h1 className=" uppercase text-2xl ">{page.title}</h1>
-          <ReactMarkdown
-            className="mt-8 text-xl break-words"
-            children={page.description}
-          />
+          <Remark className="mt-8 text-xl break-words">
+            {page.description}
+          </Remark>
+
           {/* FAQ */}
           {page.faq && (
             <div className="w-full my-8">
