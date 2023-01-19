@@ -1,0 +1,7 @@
+.dropdownContent {
+  @apply hidden absolute left-0 w-full bg-base-200 bg-opacity-80 backdrop-blur-sm -mt-1;
+}
+
+.dropdown:hover .dropdownContent {
+  @apply block;
+}
