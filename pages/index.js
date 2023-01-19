@@ -1,6 +1,7 @@
 import { getHomepage } from "../lib/api";
 
 import { useRef, useEffect } from "react";
+import Head from "next/head";
 
 import anime from "animejs";
 
@@ -41,6 +42,14 @@ export default function Home({ menu, homepage, footerLayout }) {
 
   return (
     <Layout menu={menu} footerLayout={footerLayout}>
+      <Head>
+        <title>Silano SRL</title>
+        <meta
+          property="og:title"
+          content="Da oltre 35 anni ci occupiamo di recupero, riciclo e servizi per l'ambiente: commercio rottami, autodemolizione, vendita ricambi usati, smaltimento rifiuti e bonifica amianto"
+          key="title"
+        />
+      </Head>
       <div>
         <Header
           menu={menu}
