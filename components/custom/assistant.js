@@ -15,7 +15,6 @@ export default function Assistant({ component }) {
   const redirect = (red, answerTemp) => {
     if (red > 0) {
       answer.current = [...answer.current, ...answerTemp];
-
       const index = component.assistan_option.data.attributes.steps.findIndex(
         (x) => x.id === red
       );
@@ -24,7 +23,6 @@ export default function Assistant({ component }) {
     } else {
       setPhase(-100);
     }
-    console.log(answer.current);
   };
 
   const undo = () => {
