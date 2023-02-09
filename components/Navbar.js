@@ -32,7 +32,7 @@ export default function Navbar({ imageUrl, hours, contact, layout }) {
       <div className="relative w-full h-[74px] bg-base-200 border-b border-gray-200 px-4 md:px-16 flex  justify-between items-center ">
         <Link href="/">
           <Image
-            className="w-[42px] h-[45px] mr-6 -ml-1"
+            className="w-[45px] h-[45px] mr-6 -ml-1"
             src={imageUrl}
             width={96}
             height={96}
