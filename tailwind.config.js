@@ -10,7 +10,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        primary: ['var(--inter-font)', ...defaultTheme.fontFamily.sans],
+        primary: ['var(--inter-font)'],
       },
       colors: {
         forest: "#516559",

@@ -9,8 +9,12 @@ export default function HamburgerMenu({ layout, test }) {
   return (
     <div className="inline">
       {/* HamburgerButton */}
-      <button className="" onClick={() => setIsOpen(!isOpen)}>
-        <Bars2Icon className="w-[42px] h-[42px]  text-stone-600 font-thin" />
+      <button
+        className=""
+        aria-label="hamburger menu"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <Bars2Icon className="w-[42px] h-[42px]  text-stone-600 font-thin focus:outline-none" />
       </button>
       {/* menu container */}
       {isOpen && (

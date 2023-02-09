@@ -37,7 +37,6 @@ export async function getStaticProps(context) {
   const { footer } = await getFooter();
   const { menu } = await getMenu("default");
   const { contact } = await getContact();
-  console.log(contact);
 
   return {
     // Passed to the page component as props
