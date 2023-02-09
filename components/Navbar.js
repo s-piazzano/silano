@@ -34,8 +34,8 @@ export default function Navbar({ imageUrl, hours, contact, layout }) {
           <Image
             className="w-[42px] h-[45px] mr-6 -ml-1"
             src={imageUrl}
-            width={42}
-            height={45}
+            width={96}
+            height={96}
             quality={100}
             alt="logo"
           />
