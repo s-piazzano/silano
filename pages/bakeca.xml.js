@@ -155,6 +155,7 @@ function generateBakecaXml(items) {
 function BakecaMap() {}
 
 export async function getServerSideProps({ res }) {
+  console.log(res);
   const { data } = await getBakecaItems();
 
   // We generate the XML sitemap with the posts data
@@ -166,9 +167,7 @@ export async function getServerSideProps({ res }) {
   res.end();
 
   return {
-    props: {
-      revalidate: 10
-    },
+    props: {},
   };
 }
 
