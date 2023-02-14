@@ -14,7 +14,9 @@ function generateBakecaXml(items) {
         (comp) =>
           `${comp.make.data.attributes.name} ${comp.model.data.attributes.name}`
       )
-      .join(" / ")} ${item.attributes.OE && item.attributes.OE}`.toUpperCase();
+      .join(" / ")} ${
+      item.attributes.OE ? item.attributes.OE.toUpperCase() : ""
+    }`;
   }
 
   function generateDescription(item) {
@@ -39,7 +41,7 @@ function generateBakecaXml(items) {
       `;
   }
   function generatePrice(item) {
-    if (item.attributes.price) return Math.round(price);
+    if (item.attributes.price) return Math.round(item.attributes.price);
     return 1;
   }
 

@@ -9,7 +9,7 @@ export default function Navbar({ imageUrl, hours, contact, layout }) {
     <div className="w-full fixed z-50 top-0 left-0 ">
       {/* Banner */}
       <div className=" w-full h-[32px] flex px-4 md:px-16 bg-forest justify-center md:justify-between items-center text-white text-sm font-thin">
-        <h6 className="hidden md:block">{hours}</h6>
+        <h6 className="hidden md:block"></h6>
         <div className="flex divide-x">
           <a
             target="_blank"

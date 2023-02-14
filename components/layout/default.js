@@ -2,7 +2,7 @@ import Navbar from "../Navbar";
 import Footer from "../footer";
 export default function Default({ children, menu, footerLayout }) {
   return (
-    <div className="w-full h-screen font-primary flex flex-col">
+    <div className="w-full h-screen flex flex-col">
       <Navbar
         imageUrl={menu.imageUrl}
         hours={menu.hours}
