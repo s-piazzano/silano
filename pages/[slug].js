@@ -17,7 +17,7 @@ export default function Page({
   return (
     <Layout menu={menu} footerLayout={footer}>
       <div className="w-full h-full px-4 md:px-16 py-8 flex flex-col lg:flex-row">
-        <div className="w-full lg:w-8/12">
+        <div className="w-full ">
           <h1 className=" uppercase text-2xl ">{page.title}</h1>
           <Remark className="mt-8 text-xl break-words">
             {page.description}
@@ -35,17 +35,19 @@ export default function Page({
           )}
         </div>
         {/* Right Column */}
-        <div className="w-full lg:w-4/12 lg:ml-4 flex flex-col space-y-4">
-          {/* Assistant */}
-          {componentCommonAssistant && (
-            <Assistant component={componentCommonAssistant} />
-          )}
-          {}
-          {/* Download Area */}
-          {componentPageDownload && (
-            <DownloadArea component={componentPageDownload} />
-          )}
-        </div>
+        {(componentCommonAssistant || componentPageDownload) && (
+          <div className="w-full lg:w-4/12 lg:ml-4 flex flex-col space-y-4">
+            {/* Assistant */}
+            {componentCommonAssistant && (
+              <Assistant component={componentCommonAssistant} />
+            )}
+            {}
+            {/* Download Area */}
+            {componentPageDownload && (
+              <DownloadArea component={componentPageDownload} />
+            )}
+          </div>
+        )}
       </div>
     </Layout>
   );
@@ -81,8 +83,8 @@ export async function getStaticProps(context) {
     props: {
       menu,
       page: page.attributes,
-      componentPageDownload,
-      componentCommonAssistant,
+      ...(componentPageDownload && { componentPageDownload }),
+      ...(componentCommonAssistant && { componentCommonAssistant }),
       footer: footer.data.attributes.body,
     },
   };
