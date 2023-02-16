@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Card({
   id,
   className = "",
-  imageUrl,
+  imageUrl = "https://silano-3r.fra1.digitaloceanspaces.com/3r/eb7b1453f0328c5136fe884112e2b89c.jpg?updated_at=2023-02-16T10:32:29.892Z",
   title,
   description,
   link,
@@ -12,7 +12,7 @@ export default function Card({
   return (
     <div
       id={id}
-      className={`bg-neutral-100 w-full md:max-w-sm  rounded overflow-hidden shadow-lg flex-1 ${className}`}
+      className={`bg-neutral-100 w-full md:max-w-sm  rounded overflow-hidden shadow-lg flex flex-col ${className} `}
     >
       <Image
         className="w-full"
@@ -22,7 +22,7 @@ export default function Card({
         alt="image-card"
       />
 
-      <div className="h-40 px-6 py-4">
+      <div className="px-1 lg:px-6 py-4 grow">
         <div className="font-bold text-xl mb-2">{title}</div>
         <p className="text-gray-700 text-base">{description}</p>
       </div>
