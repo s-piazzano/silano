@@ -8,6 +8,10 @@ export default function Card({
   title,
   description,
   link,
+  containerClass = "",
+  titleClass = "",
+  descriptionClass = "",
+  linkClass = "",
 }) {
   return (
     <div
@@ -22,11 +26,11 @@ export default function Card({
         alt="image-card"
       />
 
-      <div className="px-1 lg:px-6 py-4 grow">
-        <div className="font-bold text-xl mb-2">{title}</div>
-        <p className="text-gray-700 text-base">{description}</p>
+      <div className={` py-4 grow ${containerClass}`}>
+        <div className={`font-bold text-xl mb-2 ${titleClass}`}>{title}</div>
+        <p className={`text-gray-700 ${descriptionClass}`}>{description}</p>
       </div>
-      <div className="px-6 pt-4 pb-2">
+      <div className={`pt-4 pb-2 ${linkClass}`}>
         <Link href={link.url} className="inline-block font-semibold">
           {link.name}
         </Link>

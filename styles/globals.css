@@ -10,11 +10,15 @@ html {
 }
 
 h2 {
-  @apply text-xl font-semibold;
+  @apply text-xl font-semibold mb-1;
 }
 h3 {
   @apply text-lg font-semibold;
 }
 strong {
   @apply font-semibold;
+}
+
+li {
+  @apply ml-2;
 }

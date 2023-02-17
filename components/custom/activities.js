@@ -10,6 +10,8 @@ export default function Activities({ className, activities }) {
       {activities.map((activity) => (
         <Card
           className="opacity-0 flex-1"
+          containerClass="px-2 lg:px-6"
+          linkClass="px-2 lg:px-6"
           id={`card-${activity.id}`}
           key={activity.id}
           title={activity.title}
