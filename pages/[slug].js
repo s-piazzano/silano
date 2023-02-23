@@ -91,7 +91,7 @@ export async function getStaticPaths() {
         params: x.attributes,
       })
   );
-
+  console.log(slugs);
   return {
     paths: slugs,
     fallback: false, // can also be true or 'blocking'
