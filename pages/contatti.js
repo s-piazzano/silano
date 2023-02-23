@@ -9,8 +9,8 @@ import Maps from "../components/custom/maps";
 export default function Contatti({ menu, footer, contact }) {
   return (
     <Layout menu={menu} footerLayout={footer}>
-      <div className="w-full flex flex-col lg:flex-row px-4 md:px-16 py-8">
-        <div className="w-full lg:w-1/2">
+      <div className="w-full flex flex-col md:flex-row px-4 md:px-16 py-8">
+        <div className="w-full md:w-4/12 mb-4">
           <Remark
             rehypeReactOptions={{
               components: {
@@ -25,7 +25,7 @@ export default function Contatti({ menu, footer, contact }) {
             {contact.data.attributes.description}
           </Remark>
         </div>
-        <div className="w-full lg:w-1/2">
+        <div className="w-full md:w-8/12">
           <Maps width={300} height={500} />
         </div>
       </div>
