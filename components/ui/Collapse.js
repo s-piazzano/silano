@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import { Remark } from "react-remark";
 
-export default function Collapse({ title, children }) {
+export default function Collapse({ title, isRemakable = false, children }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="flex flex-col py-4 cursor-pointer">
@@ -17,7 +17,11 @@ export default function Collapse({ title, children }) {
           <ChevronDownIcon className="w-6 h-6" />
         )}
       </div>
-      {isOpen && <div className="w-full mt-2"><Remark>{children}</Remark></div>}
+      {isOpen && (
+        <div className="w-full mt-2">
+          {isRemakable ? <Remark>{children}</Remark> : children}
+        </div>
+      )}
     </div>
   );
 }

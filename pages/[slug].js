@@ -18,11 +18,22 @@ export default function Page({
   return (
     <Layout menu={menu} footerLayout={footer}>
       <div className="w-full h-full px-4 md:px-16 py-8 flex flex-col lg:flex-row">
-        <div className="w-full ">
+        <div className="w-full">
           {/* Page title */}
           <h1 className=" uppercase text-2xl mb-4">{page.title}</h1>
           {/* Page description */}
-          <Remark className="mt-8 text-xl break-words">
+          <Remark
+            className="mt-8 text-xl break-words "
+            rehypeReactOptions={{
+              components: {
+                ul: (props) => <ul className="mt-3" {...props} />,
+                li: (props) => <li className="mt-1" {...props} />,
+                strong: (props) => (
+                  <strong className="font-bold text-forest" {...props} />
+                ),
+              },
+            }}
+          >
             {page.description}
           </Remark>
 
@@ -30,7 +41,7 @@ export default function Page({
           {page.faq && (
             <div className="w-full my-12">
               {page.faq.map((faq) => (
-                <Collapse key={faq.id} title={faq.question}>
+                <Collapse key={faq.id} title={faq.question} isRemakable={true}>
                   {faq.answer}
                 </Collapse>
               ))}

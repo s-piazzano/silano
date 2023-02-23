@@ -23,9 +23,11 @@ export default function HamburgerMenu({ layout, test }) {
             /* Check DropdownMenu type */
             if (x.__typename === "ComponentDropdownMenu") {
               return (
-                <Collapse key="x.id" title={x.name}>
+                <Collapse key="x.id" title={x.name.toUpperCase()}>
                   <div className=" flex flex-col ">
                     {x.sections.map((section, index) => {
+                      console.log(section);
+                      test;
                       return (
                         <div
                           key={index}
@@ -54,7 +56,7 @@ export default function HamburgerMenu({ layout, test }) {
                   key={"link-" + x.id}
                   href={x.url}
                   alt=""
-                  className="py-4 text-stone-600"
+                  className="py-4 text-stone-600 uppercase"
                 >
                   {x.linkName}
                 </Link>
