@@ -8,6 +8,8 @@ import DownloadArea from "../components/custom/downloadArea";
 import Assistant from "../components/custom/assistant";
 import Card from "../components/ui/card";
 
+import Head from "next/head";
+
 export default function Page({
   menu,
   page,
@@ -17,20 +19,28 @@ export default function Page({
 }) {
   return (
     <Layout menu={menu} footerLayout={footer}>
+      <Head>
+        <title>Silano SRL - {page.title}</title>
+        <meta property="og:title" content={page.seo?.title} />
+        <meta property="og:description" content={page.seo?.description} />
+        <meta
+          property="og:image"
+          content={page.seo?.image?.data?.attributes.url}
+        />
+      </Head>
       <div className="w-full h-full px-4 md:px-16 py-8 flex flex-col lg:flex-row">
         <div className="w-full">
           {/* Page title */}
-          <h1 className=" uppercase text-2xl mb-4">{page.title}</h1>
+          <h1 className=" uppercase text-2xl mb-8">{page.title}</h1>
           {/* Page description */}
           <Remark
             className="mt-8 text-xl break-words "
             rehypeReactOptions={{
               components: {
+                p: (props) => <li className="font-light" {...props} />,
                 ul: (props) => <ul className="mt-3" {...props} />,
                 li: (props) => <li className="mt-1" {...props} />,
-                strong: (props) => (
-                  <strong className="font-bold text-forest" {...props} />
-                ),
+                strong: (props) => <strong className="font-bold" {...props} />,
               },
             }}
           >

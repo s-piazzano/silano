@@ -26,18 +26,17 @@ export default function HamburgerMenu({ layout, test }) {
                 <Collapse key="x.id" title={x.name.toUpperCase()}>
                   <div className=" flex flex-col ">
                     {x.sections.map((section, index) => {
-                      console.log(section);
-                      test;
                       return (
-                        <div
-                          key={index}
-                          className="pl-2 pt-2 text-black font-ligh"
-                        >
+                        <div key={index} className="pl-2 pt-2 text-black ">
                           <h2 className="">{section.title}</h2>
                           <div className="text-stone-600 flex flex-col space-y-2 mx-2 my-4">
                             {section.pages.data.map((page, index) => {
                               return (
-                                <Link key={index} href={page.attributes.slug}>
+                                <Link
+                                  key={index}
+                                  href={page.attributes.slug}
+                                  onClick={() => setIsOpen(false)}
+                                >
                                   {page.attributes.title}
                                 </Link>
                               );
@@ -56,7 +55,7 @@ export default function HamburgerMenu({ layout, test }) {
                   key={"link-" + x.id}
                   href={x.url}
                   alt=""
-                  className="py-4 text-stone-600 uppercase"
+                  className="py-4 text-stone-600 uppercase font-extralight"
                 >
                   {x.linkName}
                 </Link>

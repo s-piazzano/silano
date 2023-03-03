@@ -27,11 +27,11 @@ export default function Card({
       />
 
       <div className={` py-4 grow ${containerClass}`}>
-        <div className={`font-bold text-xl mb-2 ${titleClass}`}>{title}</div>
-        <p className={`text-gray-700 ${descriptionClass}`}>{description}</p>
+        <div className={`font-normal text-xl mb-2 ${titleClass}`}>{title}</div>
+        <p className={`text-gray-700 font-light ${descriptionClass}`}>{description}</p>
       </div>
       <div className={`pt-4 pb-2 ${linkClass}`}>
-        <Link href={link.url} className="inline-block font-semibold">
+        <Link href={link.url} className="inline-block font-medium text-forest">
           {link.name}
         </Link>
       </div>

@@ -10,7 +10,7 @@ export default function Collapse({ title, isRemakable = false, children }) {
         className="w-full flex justify-between items-center text-stone-600 font-normal"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <h2 className="">{title}</h2>
+        <h2 className="font-extralight">{title}</h2>
         {isOpen ? (
           <ChevronUpIcon className="w-6 h-6" />
         ) : (

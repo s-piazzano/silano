@@ -7,13 +7,13 @@ export default function Header({ subtitle, title, slogan }) {
     >
       <div className="text-center">
 
-        <p id="homepageSubtitle" className="text-xs opacity-0  ">
+        <p id="homepageSubtitle" className="text-xs font-extralight opacity-0  ">
           {subtitle}
         </p>
-        <h1 id="homepageTitle" className="text-6xl opacity-0">
+        <h1 id="homepageTitle" className="text-6xl font-extralight opacity-0">
           {title}
         </h1>
-        <h4 id="homepageSlogan" className="opacity-0">
+        <h4 id="homepageSlogan" className="opacity-0 font-thin">
           {slogan}
         </h4>
         

@@ -17,7 +17,7 @@ export default function Activities({ className, activities }) {
           title={activity.title}
           description={activity.description}
           link={activity.link}
-          imageUrl={activity.image?.data?.attributes?.formats?.medium?.url}
+          imageUrl={activity.image?.data?.attributes?.url}
         ></Card>
       ))}
     </div>

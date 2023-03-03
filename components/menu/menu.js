@@ -22,7 +22,7 @@ export default function Menu({ layout }) {
               key={"link-" + x.id}
               href={x.url}
               alt=""
-              className="flex items-center justify-center px-4"
+              className="flex items-center justify-center px-4 text-lg font-extralight"
             >
               {x.linkName}
             </Link>

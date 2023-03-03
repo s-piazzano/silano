@@ -7,7 +7,7 @@ export default function DropdownMenu({ name, url, type, sections }) {
     <div className={styles.dropdown}>
       <Link
         href={url ? url : "#"}
-        className="h-[74px] flex justify-center items-center px-4"
+        className="h-[74px] flex justify-center items-center px-4 text-lg font-extralight"
       >
         {name}
       </Link>
@@ -20,7 +20,7 @@ export default function DropdownMenu({ name, url, type, sections }) {
                 key={"section-" + indexSection}
                 className="flex flex-col text-lg capitalize"
               >
-                <h2 className="text-black font-normal  mb-4">
+                <h2 className="text-black font-light  mb-4">
                   {section.title}
                 </h2>
                 {/* Links */}
@@ -28,7 +28,7 @@ export default function DropdownMenu({ name, url, type, sections }) {
                   <Link
                     key={"page-" + indexPage}
                     href={"/" + page.attributes.slug}
-                    className=""
+                    className="font-extralight"
                   >
                     {page.attributes.title}
                   </Link>

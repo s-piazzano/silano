@@ -1,5 +1,7 @@
 import { getMenu, getFooter, getContact } from "../lib/api";
 
+import Head from "next/head";
+
 import { Remark } from "react-remark";
 
 import Layout from "../components/layout/default";
@@ -9,6 +11,21 @@ import Maps from "../components/custom/maps";
 export default function Contatti({ menu, footer, contact }) {
   return (
     <Layout menu={menu} footerLayout={footer}>
+      <Head>
+        <title>Silano SRL - {contact.data.attributes.seo?.title}</title>
+        <meta
+          property="og:title"
+          content={contact.data.attributes.seo?.title}
+        />
+        <meta
+          property="og:description"
+          content={contact.data.attributes.seo?.description}
+        />
+        <meta
+          property="og:image"
+          content={contact.data.attributes.seo?.image?.data?.attributes.url}
+        />
+      </Head>
       <div className="w-full flex flex-col md:flex-row px-4 md:px-16 py-8">
         <div className="w-full md:w-4/12 mb-4">
           <Remark

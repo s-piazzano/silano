@@ -43,11 +43,12 @@ export default function Home({ menu, homepage, footerLayout }) {
   return (
     <Layout menu={menu} footerLayout={footerLayout}>
       <Head>
-        <title>Silano SRL</title>
+        <title>{homepage.seo.title}</title>
+        <meta property="og:title" content={homepage.seo?.title} />
+        <meta property="og:description" content={homepage.seo?.description} />
         <meta
-          property="og:title"
-          content="Da oltre 35 anni ci occupiamo di recupero, riciclo e servizi per l'ambiente: commercio rottami, autodemolizione, vendita ricambi usati, smaltimento rifiuti e bonifica amianto"
-          key="title"
+          property="og:image"
+          content={homepage.seo?.image?.data?.attributes.url}
         />
       </Head>
       <div>
@@ -81,7 +82,7 @@ export async function getStaticProps() {
 
   const {
     data: {
-      attributes: { subtitle, title, slogan, activities },
+      attributes: { subtitle, title, slogan, activities, seo },
     },
   } = homepage;
 
@@ -104,6 +105,7 @@ export async function getStaticProps() {
         title,
         slogan,
         activities,
+        seo,
       },
       footerLayout,
     },
