@@ -37,7 +37,7 @@ export default function Page({
             className="mt-8 text-xl break-words "
             rehypeReactOptions={{
               components: {
-                p: (props) => <li className="font-light" {...props} />,
+                p: (props) => <p className="font-light" {...props} />,
                 ul: (props) => <ul className="mt-3" {...props} />,
                 li: (props) => <li className="mt-1" {...props} />,
                 strong: (props) => <strong className="font-bold" {...props} />,
