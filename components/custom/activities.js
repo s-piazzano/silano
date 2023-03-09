@@ -5,7 +5,7 @@ import Card from "../ui/card";
 export default function Activities({ className, activities }) {
   return (
     <div
-      className={`w-full flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8 justify-center items-stretch px-4 -mb-48 ${className}`}
+      className={`w-full flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8 justify-center items-stretch px-4 md:px-16 -mb-60 ${className}`}
     >
       {activities.map((activity) => (
         <Card

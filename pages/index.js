@@ -20,23 +20,23 @@ export default function Home({ menu, homepage, footerLayout }) {
     });
     tl.add({
       targets: "#homepageSubtitle",
-      translateY: -120,
+      translateY: -70,
       opacity: 1,
     });
     tl.add({
       targets: "#homepageTitle",
-      translateY: -120,
+      translateY: -70,
       opacity: 1,
     });
     tl.add({
       targets: "#homepageSlogan",
-      translateY: -120,
+      translateY: -70,
       opacity: 1,
     });
 
     if (homepage.activities && homepage.activities.length)
       homepage.activities.map((x) =>
-        tl.add({ targets: `#card-${x.id}`, translateY: -320, opacity: 1 })
+        tl.add({ targets: `#card-${x.id}`, translateY: -430, opacity: 1 })
       );
   });
 
@@ -51,7 +51,7 @@ export default function Home({ menu, homepage, footerLayout }) {
           content={homepage.seo?.image?.data?.attributes.url}
         />
       </Head>
-      <div>
+      <div className="w-full">
         <Header
           menu={menu}
           title={homepage.title}

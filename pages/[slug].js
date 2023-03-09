@@ -33,19 +33,24 @@ export default function Page({
           {/* Page title */}
           <h1 className=" uppercase text-2xl mb-8">{page.title}</h1>
           {/* Page description */}
-          <Remark
-            className="mt-8 text-xl break-words "
-            rehypeReactOptions={{
-              components: {
-                p: (props) => <p className="font-light" {...props} />,
-                ul: (props) => <ul className="mt-3" {...props} />,
-                li: (props) => <li className="mt-1" {...props} />,
-                strong: (props) => <strong className="font-bold" {...props} />,
-              },
-            }}
-          >
-            {page.description}
-          </Remark>
+          {page.description && (
+            <Remark
+              className="mt-8 text-xl break-words "
+              rehypeReactOptions={{
+                components: {
+                  p: (props) => <p className="font-light mt-2" {...props} />,
+                  h2: (props) => <h2 className="mt-2" {...props} />,
+                  ul: (props) => <ul className="mt-3" {...props} />,
+                  li: (props) => <li className="mt-1 ml-2" {...props} />,
+                  strong: (props) => (
+                    <strong className="font-bold" {...props} />
+                  ),
+                },
+              }}
+            >
+              {page.description}
+            </Remark>
+          )}
 
           {/* FAQ */}
           {page.faq && (
@@ -112,7 +117,6 @@ export async function getStaticPaths() {
         params: x.attributes,
       })
   );
-  console.log(slugs);
   return {
     paths: slugs,
     fallback: false, // can also be true or 'blocking'
