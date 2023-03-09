@@ -15,13 +15,15 @@ function generateSiteMap(pages) {
     <url>
         <loc>${DEFAULT_URL + "/cookie-policy"}</loc>
     </url>
-    ${pages.data.map((slug) => {
-      return `
+    ${pages.data
+      .map((slug) => {
+        return `
         <url>
             <loc>${`${DEFAULT_URL}/${slug.attributes.slug}`}</loc>
         </url>
       `;
-    })}
+      })
+      .join("")}
    </urlset>
  `;
 }
