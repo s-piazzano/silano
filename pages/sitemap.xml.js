@@ -1,6 +1,6 @@
 import { getSlugs } from "../lib/api";
 
-const DEFAULT_URL = "https://wwww.silanosrl.it";
+const DEFAULT_URL = "https://www.silanosrl.it";
 
 function generateSiteMap(pages) {
   return `<?xml version="1.0" encoding="UTF-8"?>
