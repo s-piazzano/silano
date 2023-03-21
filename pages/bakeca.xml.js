@@ -90,9 +90,14 @@ function generateBakecaXml(items) {
               <ATTRVAL><![CDATA[02397390028]]></ATTRVAL>
             </ATTRIBUTE>
             <ATTRIBUTE>
-              <ATTRID>telagenzia</ATTRID>
+              <ATTRID>contattotelefonico</ATTRID>
               <ATTRNAME></ATTRNAME>
               <ATTRVAL><![CDATA[+390161930380]]></ATTRVAL>
+            </ATTRIBUTE>
+            <ATTRIBUTE>
+              <ATTRID>contattotelefonico2</ATTRID>
+              <ATTRNAME></ATTRNAME>
+              <ATTRVAL><![CDATA[+393929898074]]></ATTRVAL>
             </ATTRIBUTE>
             <ATTRIBUTE>
               <ATTRID>logoagenzia</ATTRID>
