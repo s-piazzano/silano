@@ -21,7 +21,7 @@ function generateBakecaXml(items) {
 
   function generateDescription(item) {
     return `
-      Autodemolizione specializzata alla vendita ricambi usati. 
+      Autodemolizione specializzata nella vendita ricambi usati. 
       Offriamo come ricambio usato funzionante ${
         item.attributes.sub_category.data[0].attributes.name
       } per:
