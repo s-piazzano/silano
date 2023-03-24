@@ -34,7 +34,7 @@ function generateBakecaXml(items) {
 
       Disponiamo di ricambi per carrozzeria, meccanica, parti elettriche ed elettroniche, selleria...
       I ricambi sono accuratamente smontati e catalogati in magazzino da personale qualificato.
-      
+      ƒ
       Rispondiamo quotidianamente alle vostre e-mail.
  
       Possibilità di spedizione in tutta Italia
@@ -135,6 +135,8 @@ function generateBakecaXml(items) {
               <ATTRVAL><![CDATA[${generatePrice(item)}]]></ATTRVAL>
             </ATTRIBUTE>
             
+            </ATTRIBUTELIST>
+
             
             <IMAGELIST>
 
@@ -148,7 +150,7 @@ function generateBakecaXml(items) {
              
             </IMAGELIST>
 
-            </ATTRIBUTELIST>
+            
       </ITEM>`
         )
         .join("")}
