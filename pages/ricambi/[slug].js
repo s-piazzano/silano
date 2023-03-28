@@ -1,4 +1,4 @@
-import { getAllProducts } from "../../lib/api";
+/* import { getAllProducts } from "../../lib/api";
 
 import { useRef, useEffect } from "react";
 
@@ -46,3 +46,4 @@ export async function getStaticProps(context) {
     props: {}
   }
 }
+ */
