@@ -185,7 +185,7 @@ export async function getServerSideProps({ res }) {
   /*   const allData = [...data]; */
   let promises = [];
 
-  for (let i = 1; i < 6; i++) {
+  for (let i = 1; i < 5; i++) {
     promises = [...promises, i];
   }
 
