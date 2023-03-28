@@ -185,7 +185,7 @@ export async function getServerSideProps({ res }) {
   /*   const allData = [...data]; */
   let promises = [];
 
-  for (let i = 1; i < meta.pagination.pageCount; i++) {
+  for (let i = 1; i < 6; i++) {
     promises = [...promises, i];
   }
 
