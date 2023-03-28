@@ -1,4 +1,4 @@
-/* import { getAllProducts } from "../../lib/api";
+import { getAllProducts } from "../../lib/api";
 
 import { useRef, useEffect } from "react";
 
@@ -7,8 +7,8 @@ import Head from "next/head";
 import Layout from "../../components/layout/default";
 
 export default function Product() {
-  return (
-    <Layout menu={menu} footerLayout={footerLayout}>
+  return <div>ciao</div>;
+  /*  <Layout menu={menu} footerLayout={footerLayout}>
       <Head>
         <title>{homepage.seo.title}</title>
         <meta property="og:title" content={homepage.seo?.title} />
@@ -20,10 +20,10 @@ export default function Product() {
       </Head>
       <div className="w-full"></div>
     </Layout>
-  );
+  ); */
 }
 
-export async function getStaticPaths() {
+/* export async function getStaticPaths() {
   const products = await getAllProducts();
   console.log(products);
   // Automatic generation of paths
@@ -37,13 +37,12 @@ export async function getStaticPaths() {
     paths: slugs,
     fallback: false, // can also be true or 'blocking'
   };
-}
+} */
 
 export async function getStaticProps(context) {
   const slug = context.params.slug;
   console.log(slug);
   return {
-    props: {}
-  }
+    props: {},
+  };
 }
- */
