@@ -181,9 +181,6 @@ function BakecaMap() {}
 
 export async function getServerSideProps({ res }) {
   const {data,  meta } = await getBakecaItems(1);
- console.log(data.length)
-
-
 
   /* console.log(test); */
   // We generate the XML sitemap with the posts data
