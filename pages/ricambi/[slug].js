@@ -36,8 +36,8 @@ export default function Ricambi({ menu, product, footer }) {
       description
         ? description
         : `
-      Autodemolizione specializzata nella vendita ricambi usati. 
-      Offriamo come ricambio usato funzionante ${sub.name} per:
+Autodemolizione specializzata nella vendita ricambi usati. 
+Offriamo come ricambio usato funzionante ${sub[0].attributes.name} per:
       ${comps
         .map(
           (comp) =>
@@ -47,8 +47,8 @@ export default function Ricambi({ menu, product, footer }) {
         )
         .join("")}
   
-      Disponiamo di ricambi per carrozzeria, meccanica, parti elettriche ed elettroniche, selleria...
-      I ricambi sono accuratamente smontati e catalogati in magazzino da personale qualificato.
+Disponiamo di ricambi per carrozzeria, meccanica, parti elettriche ed elettroniche, selleria...
+I ricambi sono accuratamente smontati e catalogati in magazzino da personale qualificato.
    `
     }
 
@@ -90,6 +90,7 @@ Possibilità di spedizione in tutta Italia
         <meta
           property="og:image"
           content={
+            product.attributes.images.data.length &&
             product.attributes.images.data[0].attributes.formats.small.url
           }
         />
