@@ -169,5 +169,6 @@ export async function getStaticProps(context) {
       product,
       footer: footer.data.attributes.body,
     },
+    revalidate: 60
   };
 }
