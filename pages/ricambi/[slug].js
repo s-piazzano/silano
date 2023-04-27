@@ -10,7 +10,7 @@ import Layout from "../../components/layout/default";
 import Gallery from "../../components/ui/Gallery";
 
 export default function Ricambi({ menu, product, footer }) {
-  const { asPath } = useRouter();
+  const { asPath, push } = useRouter();
 
   const generateTitle = (subs, comps, oe = "", motorType = "") => {
     return ` ${subs[0].attributes.name} ${comps
@@ -59,82 +59,86 @@ Possibilità di spedizione in tutta Italia
   };
 
   return (
-    <Layout menu={menu} footerLayout={footer}>
-      <Head>
-        <title>
-          Silano SRL -{" "}
-          {generateTitle(
-            product.attributes.sub_category.data,
-            product.attributes.compatibilities,
-            product.attributes.OE,
-            product.attributes.motorType
-          )}
-        </title>
-        <meta
-          property="og:title"
-          content={generateTitle(
-            product.attributes.sub_category.data,
-            product.attributes.compatibilities,
-            product.attributes.OE,
-            product.attributes.motorType
-          )}
-        />
-        <meta
-          property="og:description"
-          content={generateDescription(
-            product.attributes.sub_category.data,
-            product.attributes.compatibilities,
-            product.attributes.description
-          )}
-        />
-        <meta
-          property="og:image"
-          content={
-            product.attributes.images.data.length &&
-            product.attributes.images.data[0].attributes.formats.small.url
-          }
-        />
-      </Head>
-      <div className="px-4 md:px-16 py-8 flex flex-col md:flex-row">
-        <Gallery className="" images={product.attributes.images}></Gallery>
+    <div>
+      {product && (
+        <Layout menu={menu} footerLayout={footer}>
+          <Head>
+            <title>
+              Silano SRL -{" "}
+              {generateTitle(
+                product.attributes.sub_category.data,
+                product.attributes.compatibilities,
+                product.attributes.OE,
+                product.attributes.motorType
+              )}
+            </title>
+            <meta
+              property="og:title"
+              content={generateTitle(
+                product.attributes.sub_category.data,
+                product.attributes.compatibilities,
+                product.attributes.OE,
+                product.attributes.motorType
+              )}
+            />
+            <meta
+              property="og:description"
+              content={generateDescription(
+                product.attributes.sub_category.data,
+                product.attributes.compatibilities,
+                product.attributes.description
+              )}
+            />
+            <meta
+              property="og:image"
+              content={
+                product.attributes.images.data.length &&
+                product.attributes.images.data[0].attributes.formats.small.url
+              }
+            />
+          </Head>
+          <div className="px-4 md:px-16 py-8 flex flex-col md:flex-row">
+            <Gallery className="" images={product.attributes.images}></Gallery>
 
-        <div className="flex flex-col pt-8 md:pl-8 md:pt-0">
-          <h1 className="sm:hidden md:block text-lg font-semibold">
-            {generateTitle(
-              product.attributes.sub_category.data,
-              product.attributes.compatibilities,
-              product.attributes.OE,
-              product.attributes.motorType
-            )}
-          </h1>
-          <div className="whitespace-pre-wrap mt-4">
-            {generateDescription(
-              product.attributes.sub_category.data,
-              product.attributes.compatibilities,
-              product.attributes.description
-            )}
-          </div>
+            <div className="flex flex-col pt-8 md:pl-8 md:pt-0">
+              <h1 className="sm:hidden md:block text-lg font-semibold">
+                {generateTitle(
+                  product.attributes.sub_category.data,
+                  product.attributes.compatibilities,
+                  product.attributes.OE,
+                  product.attributes.motorType
+                )}
+              </h1>
+              <div className="whitespace-pre-wrap mt-4">
+                {generateDescription(
+                  product.attributes.sub_category.data,
+                  product.attributes.compatibilities,
+                  product.attributes.description
+                )}
+              </div>
 
-          <Link
-            className="w-40 h-12 bg-forest text-white rounded-sm uppercase mt-4 flex justify-center items-center px-4"
-            href={`https://wa.me/+393929898074?text=Ciao Silano SRL, ti contatto in merito all'annuncio ${
-              "https://www.silanosrl.it" + asPath
-            }.`}
-            passHref={true}
-          >
-            <div className="flex flex-col text-center items-center">
-              <p className="">
-                ACQUISTA
-                {product.attributes.price
-                  ? " - " + product.attributes.price + " €"
-                  : ""}
-              </p>
-              <p className="uppercase text-xs">whatsapp</p>
+              <Link
+                className="w-40 h-12 bg-forest text-white rounded-sm uppercase mt-4 flex justify-center items-center px-4"
+                href={`https://wa.me/+393929898074?text=Ciao Silano SRL, ti contatto in merito all'annuncio ${
+                  "https://www.silanosrl.it" + asPath
+                }.`}
+                passHref={true}
+              >
+                <div className="flex flex-col text-center items-center">
+                  <p className="">
+                    ACQUISTA
+                    {product.attributes.price
+                      ? " - " + product.attributes.price + " €"
+                      : ""}
+                  </p>
+                  <p className="uppercase text-xs">whatsapp</p>
+                </div>
+              </Link>
             </div>
-          </Link>
-        </div>
-      </div>
-    </Layout>
+          </div>
+        </Layout>
+      )}
+    </div>
   );
 }
 
@@ -160,7 +164,13 @@ export async function getStaticProps(context) {
   const { footer } = await getPage(slug);
   const { menu } = await getMenu("default");
 
-  const { product } = await getProductBySlug(slug);
+  const { product } = (await getProductBySlug(slug)) ?? null;
+
+  if (!product || typeof product === "undefined") {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     // Passed to the page component as props
@@ -169,6 +179,6 @@ export async function getStaticProps(context) {
       product,
       footer: footer.data.attributes.body,
     },
-    revalidate: 60
+    revalidate: 60,
   };
 }
