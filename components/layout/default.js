@@ -1,6 +1,7 @@
 import Navbar from "../Navbar";
 import Footer from "../footer";
 export default function Default({ children, menu, footerLayout }) {
+  console.log("rw" +menu.imageUrl)
   return (
     <div className="w-full h-screen flex flex-col">
       <Navbar
