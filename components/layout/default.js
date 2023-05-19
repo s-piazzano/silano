@@ -1,5 +1,3 @@
-import { cookies } from "next/headers";
-
 import Navbar from "../Navbar";
 import Footer from "../footer";
 import CookiesAllert from "../custom/cookiesAllert";
