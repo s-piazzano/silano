@@ -135,7 +135,7 @@ Possibilità di spedizione in tutta Italia
                 className="w-64 h-12 bg-forest text-white rounded-sm uppercase mt-4 flex justify-center items-center px-4"
                 href={`https://wa.me/+393929898074?text=Ciao Silano SRL, ti contatto in merito all'annuncio ${
                   "https://www.silanosrl.it" + asPath
-                } (non modificare). Come posso procedere all'acquisto?`}
+                } (non modificare). ${product.attributes.price ? "Come posso procedere all'acquisto?" : "Vorrei conoscere una quotazione."}`}
                 passHref={true}
               >
                 <div className=" flex flex-col text-center items-center">
