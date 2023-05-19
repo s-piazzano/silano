@@ -124,7 +124,7 @@ Possibilità di spedizione in tutta Italia
                   title="Perché il prezzo non è definito?"
                 >
                   <p>
-                    I prodotti usati nel mondo dell'automotive subisco
+                    I prodotti usati nel mondo dell&apos;automotive subisco
                     variazioni di prezzo continui. Per definire una quotazione
                     corretta del prodotto contatta direttamente il magazzino
                   </p>
