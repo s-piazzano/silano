@@ -134,6 +134,25 @@ Possibilità di spedizione in tutta Italia
                   <p className="uppercase text-xs">whatsapp</p>
                 </div>
               </Link>
+              <div className="flex flex-col mt-8">
+                <h2 className="font-semibold">
+                  Non sei sicuro della compatibilità o hai bisogno di maggiori
+                  informazioni?
+                </h2>
+                <h2 className="font-normal mt-2">
+                  Non esitare a contattarci. Siamo a tua disposione
+                </h2>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-4"
+                  href={`https://wa.me/+393929898074?text=Ciao Silano SRL, ti contatto in merito all'annuncio ${
+                    "https://www.silanosrl.it" + asPath
+                  } (non modificare). Avrei bisogno di informazioni ...`}
+                >
+                  Scrivici su Whatsapp (+39 392 9898 074) - clicca qui
+                </a>
+              </div>
             </div>
           </div>
         </Layout>

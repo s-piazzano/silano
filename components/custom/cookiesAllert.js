@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useCookies } from "react-cookie";
 import { useState, useEffect } from "react";
 
+
 export default function CookiesAllert({ className }) {
   const [cookies, setCookie, removeCookie] = useCookies(["user"]);
   const [cookiePolicy, setCookiePolicy] = useState(false);
