@@ -2,15 +2,22 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function Gallery({ images }) {
-  const [imageUrl, setImageUrl] = useState(images.data.length ? images.data[0].attributes.formats.small.url : 'https://silano-3r.fra1.digitaloceanspaces.com/3r/2d8db009212b92d9f9e336072b312ce6.jpg?updated_at=2023-04-27T09:22:12.184Z');
+
+  const [imageUrl, setImageUrl] = useState(
+    images.data.length
+      ? images.data[0].attributes.formats.small.url
+      : "https://silano-3r.fra1.digitaloceanspaces.com/3r/2d8db009212b92d9f9e336072b312ce6.jpg?updated_at=2023-04-27T09:22:12.184Z"
+  );
 
   return (
     <div className="flex flex-col w-full md:w-1/2 lg:w-[500px]">
       <Image
         src={imageUrl}
         alt="Picture of the author"
-        width={500}
-        height={300}
+        width={800}
+        height={400}
+        className="cursor-pointer "
+       
       />
       <div className="flex pt-2 overflow-y-auto">
         {images.data.map((x) => {

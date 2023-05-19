@@ -4,7 +4,7 @@ import CookiesAllert from "../custom/cookiesAllert";
 
 export default function Default({ children, menu, footerLayout }) {
   return (
-    <div className="w-full h-screen flex flex-col">
+    <div className="w-full h-screen flex flex-col overflow-x-hidden">
       <Navbar
         imageUrl={menu.imageUrl}
         hours={menu.hours}

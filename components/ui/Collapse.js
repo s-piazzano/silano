@@ -2,10 +2,15 @@ import { useState } from "react";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import { Remark } from "react-remark";
 
-export default function Collapse({ title, isRemakable = false, children }) {
+export default function Collapse({
+  title,
+  isRemakable = false,
+  children,
+  className,
+}) {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="flex flex-col py-4 cursor-pointer">
+    <div className={`flex flex-col py-4 cursor-pointer ${className}`}>
       <div
         className="w-full flex justify-between items-center text-stone-600 font-normal"
         onClick={() => setIsOpen(!isOpen)}

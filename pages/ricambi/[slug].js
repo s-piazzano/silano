@@ -8,6 +8,7 @@ import { getSlugs, getPage, getMenu, getProductBySlug } from "../../lib/api";
 
 import Layout from "../../components/layout/default";
 import Gallery from "../../components/ui/Gallery";
+import Collapse from "../../components/ui/Collapse";
 
 export default function Ricambi({ menu, product, footer }) {
   const { asPath, push } = useRouter();
@@ -59,7 +60,7 @@ Possibilità di spedizione in tutta Italia
   };
 
   return (
-    <div>
+    <div className="">
       {product && (
         <Layout menu={menu} footerLayout={footer}>
           <Head>
@@ -97,10 +98,10 @@ Possibilità di spedizione in tutta Italia
               }
             />
           </Head>
-          <div className="px-4 md:px-16 py-8 flex flex-col md:flex-row">
+          <div className="px-4 md:px-16 py-8 flex flex-col md:flex-row ">
             <Gallery className="" images={product.attributes.images}></Gallery>
 
-            <div className="flex flex-col pt-8 md:pl-8 md:pt-0">
+            <div className=" flex flex-col pt-8 md:pl-8 md:pt-0">
               <h1 className="sm:hidden md:block text-lg font-semibold">
                 {generateTitle(
                   product.attributes.sub_category.data,
@@ -116,17 +117,32 @@ Possibilità di spedizione in tutta Italia
                   product.attributes.description
                 )}
               </div>
-
+              {/* Collapse */}
+              {!product.attributes.price && (
+                <Collapse
+                  className="w-full md:w-96"
+                  title="Perché il prezzo non è definito?"
+                >
+                  <p>
+                    I prodotti usati nel mondo dell'automotive subisco
+                    variazioni di prezzo continui. Per definire una quotazione
+                    corretta del prodotto contatta direttamente il magazzino
+                  </p>
+                </Collapse>
+              )}
+              {/* Button */}
               <Link
-                className="w-52 h-12 bg-forest text-white rounded-sm uppercase mt-4 flex justify-center items-center px-4"
+                className="w-64 h-12 bg-forest text-white rounded-sm uppercase mt-4 flex justify-center items-center px-4"
                 href={`https://wa.me/+393929898074?text=Ciao Silano SRL, ti contatto in merito all'annuncio ${
                   "https://www.silanosrl.it" + asPath
                 } (non modificare). Come posso procedere all'acquisto?`}
                 passHref={true}
               >
-                <div className="flex flex-col text-center items-center">
+                <div className=" flex flex-col text-center items-center">
                   <p className="">
-                    ACQUISTA
+                    {product.attributes.price
+                      ? "ACQUISTA"
+                      : "CONTATTA IL MAGAZZINO"}
                     {product.attributes.price
                       ? " - " + product.attributes.price + " €"
                       : ""}
@@ -152,6 +168,16 @@ Possibilità di spedizione in tutta Italia
                 >
                   Scrivici su Whatsapp (+39 392 9898 074) - clicca qui
                 </a>
+                <div className="flex flex-col md:flex-row mt-1">
+                  <p>Se preferisci scrivere un email:</p>
+                  <a
+                    href="mailto:ricambisilano@gmail.com"
+                    className="ml-0 md:ml-2"
+                  >
+                    ricambisilano@gmail.com
+                  </a>
+                  <a></a>
+                </div>
               </div>
             </div>
           </div>
