@@ -123,10 +123,7 @@ Possibilità di spedizione in tutta Italia
                   className="w-full md:w-96"
                   title="Perché il prezzo non è definito?"
                 >
-                  <p>
-                    I prodotti usati nel mondo dell&apos;automotive subisco
-                    variazioni di prezzo continui. Per definire una quotazione
-                    corretta del prodotto contatta direttamente il magazzino
+                  <p>Per garantire il miglior prezzo del ricambio usato in cntinuo aggiornamento rispetto al prezzo del ricambio nuovo. Contattaci direttamente per conoscere il prezzo.
                   </p>
                 </Collapse>
               )}
