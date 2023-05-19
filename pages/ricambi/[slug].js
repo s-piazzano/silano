@@ -169,7 +169,7 @@ Possibilità di spedizione in tutta Italia
                   Scrivici su Whatsapp (+39 392 9898 074) - clicca qui
                 </a>
                 <div className="flex flex-col md:flex-row mt-1">
-                  <p>Se preferisci scrivere un email:</p>
+                  <p>Se preferisci scrivere una e-mail:</p>
                   <a
                     href="mailto:ricambisilano@gmail.com"
                     className="ml-0 md:ml-2"
