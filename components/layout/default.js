@@ -1,7 +1,10 @@
+import { cookies } from "next/headers";
+
 import Navbar from "../Navbar";
 import Footer from "../footer";
+import CookiesAllert from "../custom/cookiesAllert";
+
 export default function Default({ children, menu, footerLayout }) {
-  console.log("rw" +menu.imageUrl)
   return (
     <div className="w-full h-screen flex flex-col">
       <Navbar
@@ -12,7 +15,7 @@ export default function Default({ children, menu, footerLayout }) {
       />
       <div className="w-full mt-[106px] grow">{children}</div>
       <Footer layout={footerLayout} />
+      <CookiesAllert></CookiesAllert>
     </div>
   );
-
 }
