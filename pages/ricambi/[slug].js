@@ -99,10 +99,18 @@ Possibilità di spedizione in tutta Italia
             />
           </Head>
           <div className="px-4 md:px-16 py-8 flex flex-col md:flex-row ">
+            <h1 className="md:hidden text-lg font-semibold mb-4">
+              {generateTitle(
+                product.attributes.sub_category.data,
+                product.attributes.compatibilities,
+                product.attributes.OE,
+                product.attributes.motorType
+              )}
+            </h1>
             <Gallery className="" images={product.attributes.images}></Gallery>
 
             <div className=" flex flex-col pt-8 md:pl-8 md:pt-0">
-              <h1 className="sm:hidden md:block text-lg font-semibold">
+              <h1 className="hidden md:block text-lg font-semibold">
                 {generateTitle(
                   product.attributes.sub_category.data,
                   product.attributes.compatibilities,
@@ -110,7 +118,7 @@ Possibilità di spedizione in tutta Italia
                   product.attributes.motorType
                 )}
               </h1>
-              <div className="whitespace-pre-wrap mt-4">
+              <div className="whitespace-pre-wrap md:mt-4">
                 {generateDescription(
                   product.attributes.sub_category.data,
                   product.attributes.compatibilities,
@@ -123,7 +131,10 @@ Possibilità di spedizione in tutta Italia
                   className="w-full md:w-96"
                   title="Perché il prezzo non è definito?"
                 >
-                  <p>Per garantire il miglior prezzo del ricambio usato in cntinuo aggiornamento rispetto al prezzo del ricambio nuovo. Contattaci direttamente per conoscere il prezzo.
+                  <p>
+                    I prezzi sui ricambi sono in continua evoluzione. Per
+                    garantirti il miglior prezzo contattaci direttamente per
+                    conoscere il prezzo.
                   </p>
                 </Collapse>
               )}
@@ -132,7 +143,11 @@ Possibilità di spedizione in tutta Italia
                 className="w-64 h-12 bg-forest text-white rounded-sm uppercase mt-4 flex justify-center items-center px-4"
                 href={`https://wa.me/+393929898074?text=Ciao Silano SRL, ti contatto in merito all'annuncio ${
                   "https://www.silanosrl.it" + asPath
-                } (non modificare). ${product.attributes.price ? "Come posso procedere all'acquisto?" : "Vorrei conoscere una quotazione."}`}
+                } (non modificare). ${
+                  product.attributes.price
+                    ? "Come posso procedere all'acquisto?"
+                    : "Vorrei conoscere una quotazione."
+                }`}
                 passHref={true}
               >
                 <div className=" flex flex-col text-center items-center">
