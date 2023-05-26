@@ -9,6 +9,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        xxs: '0.6rem'
+      },
       fontFamily: {
         inter: ["Inter", ...defaultTheme.fontFamily.sans],
       },
