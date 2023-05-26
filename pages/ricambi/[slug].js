@@ -153,13 +153,15 @@ Possibilità di spedizione in tutta Italia
                 <div className=" flex flex-col text-center items-center">
                   <p className="">
                     {product.attributes.price
-                      ? "ACQUISTA"
+                      ? "ACQUISTA - WHATSAPP"
                       : "CONTATTA IL MAGAZZINO"}
-                    {product.attributes.price
-                      ? " - " + product.attributes.price + " €"
-                      : ""}
                   </p>
-                  <p className="uppercase text-xs">whatsapp</p>
+                  <p className="uppercase text-xs">
+                    {product.attributes.price
+                      ?  product.attributes.price + " €"
+                      : ""}{" "}
+                    + SPEDIZIONE
+                  </p>
                 </div>
               </Link>
               <div className="flex flex-col mt-8">
