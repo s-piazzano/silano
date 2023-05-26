@@ -66,21 +66,27 @@ Possibilità di spedizione in tutta Italia
           <Head>
             <title>
               Silano SRL -{" "}
-              {generateTitle(
-                product.attributes.sub_category.data,
-                product.attributes.compatibilities,
-                product.attributes.OE,
-                product.attributes.motorType
-              )}
+              {product.attributes.title
+                ? product.attributes.title
+                : generateTitle(
+                    product.attributes.sub_category.data,
+                    product.attributes.compatibilities,
+                    product.attributes.OE,
+                    product.attributes.motorType
+                  )}
             </title>
             <meta
               property="og:title"
-              content={generateTitle(
-                product.attributes.sub_category.data,
-                product.attributes.compatibilities,
-                product.attributes.OE,
-                product.attributes.motorType
-              )}
+              content={
+                product.attributes.title
+                  ? product.attributes.title
+                  : generateTitle(
+                      product.attributes.sub_category.data,
+                      product.attributes.compatibilities,
+                      product.attributes.OE,
+                      product.attributes.motorType
+                    )
+              }
             />
             <meta
               property="og:description"
@@ -100,25 +106,29 @@ Possibilità di spedizione in tutta Italia
           </Head>
           <div className="px-4 md:px-16 py-8 flex flex-col md:flex-row ">
             <h1 className="md:hidden text-lg font-semibold mb-4">
-              {generateTitle(
-                product.attributes.sub_category.data,
-                product.attributes.compatibilities,
-                product.attributes.OE,
-                product.attributes.motorType
-              )}
+              {product.attributes.title
+                ? product.attributes.title
+                : generateTitle(
+                    product.attributes.sub_category.data,
+                    product.attributes.compatibilities,
+                    product.attributes.OE,
+                    product.attributes.motorType
+                  )}
             </h1>
             <Gallery className="" images={product.attributes.images}></Gallery>
 
             <div className=" flex flex-col pt-8 md:pl-8 md:pt-0">
               <h1 className="hidden md:block text-lg font-semibold">
-                {generateTitle(
-                  product.attributes.sub_category.data,
-                  product.attributes.compatibilities,
-                  product.attributes.OE,
-                  product.attributes.motorType
-                )}
+                {product.attributes.title
+                  ? product.attributes.title
+                  : generateTitle(
+                      product.attributes.sub_category.data,
+                      product.attributes.compatibilities,
+                      product.attributes.OE,
+                      product.attributes.motorType
+                    )}
               </h1>
-              <div className="whitespace-pre-wrap md:mt-4">
+              <div className="whitespace-pre-wrap">
                 {generateDescription(
                   product.attributes.sub_category.data,
                   product.attributes.compatibilities,
@@ -158,9 +168,8 @@ Possibilità di spedizione in tutta Italia
                   </p>
                   <p className="uppercase text-xs">
                     {product.attributes.price
-                      ?  product.attributes.price + " €"
+                      ? product.attributes.price + " € + SPEDIZIONE"
                       : ""}{" "}
-                    + SPEDIZIONE
                   </p>
                 </div>
               </Link>
