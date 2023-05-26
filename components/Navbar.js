@@ -1,10 +1,25 @@
 import Link from "next/link";
+import { useEffect } from "react";
 
 import Image from "next/image";
 import Menu from "./menu/menu";
 import HamburgerMenu from "./menu/hamburgher";
 
+import anime from "animejs";
+
 export default function Navbar({ imageUrl, hours, contact, layout }) {
+  useEffect(() => {
+    var tl = anime.timeline({
+      easing: "easeOutExpo",
+      duration: 5000,
+    });
+    tl.add({
+      targets: "#companyName",
+      translateX: 8,
+      opacity: 1,
+    });
+  });
+
   return (
     <div className="w-full fixed z-50 top-0 left-0 ">
       {/* Banner */}
@@ -30,15 +45,21 @@ export default function Navbar({ imageUrl, hours, contact, layout }) {
         </div>
       </div>
       <div className="relative w-full h-[74px] bg-base-200 border-b border-gray-200 px-4 md:px-16 flex  justify-between items-center ">
-        <Link href="/">
+        <Link
+          href="/"
+          className="w-[65px] flex flex-col items-center  mr-6 -ml-1"
+        >
           <Image
-            className="w-[45px] h-[45px] mr-6 -ml-1"
+            className="w-[45px] h-[45px]"
             src={imageUrl}
             width={96}
             height={96}
             quality={100}
             alt="logo"
           />
+          <p id="companyName" className="uppercase text-xxs text-forest opacity-0">
+            silano srl
+          </p>
         </Link>
         <Menu layout={layout} />
         <div className="block md:hidden">
