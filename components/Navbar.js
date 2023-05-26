@@ -11,7 +11,7 @@ export default function Navbar({ imageUrl, hours, contact, layout }) {
   useEffect(() => {
     var tl = anime.timeline({
       easing: "easeOutExpo",
-      duration: 5000,
+      duration: 3000,
     });
     tl.add({
       targets: "#companyName",
@@ -57,7 +57,7 @@ export default function Navbar({ imageUrl, hours, contact, layout }) {
             quality={100}
             alt="logo"
           />
-          <p id="companyName" className="uppercase text-xxs text-forest opacity-0">
+          <p id="companyName" className="uppercase text-xxs text-forest opacity-0 font-light">
             silano srl
           </p>
         </Link>
