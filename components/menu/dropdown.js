@@ -12,7 +12,7 @@ export default function DropdownMenu({ name, url, type, sections }) {
         {name}
       </Link>
       <div className={styles.dropdownContent}>
-        <div className="w-full flex space-x-12 md:px-16 md:py-4">
+        <div className="w-full flex space-x-12 md:px-16 md:py-8">
           {/* sections */}
           {sections.map((section, indexSection) => {
             return (
