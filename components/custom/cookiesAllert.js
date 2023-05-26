@@ -2,27 +2,35 @@ import Link from "next/link";
 import { useCookies } from "react-cookie";
 import { useState, useEffect } from "react";
 
-
 export default function CookiesAllert({ className }) {
   const [cookies, setCookie, removeCookie] = useCookies(["user"]);
   const [cookiePolicy, setCookiePolicy] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     if (cookies.cookiesPolicy) setCookiePolicy(true);
   }, [cookies]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setIsVisible(true);
+    }, 4000);
+  });
+
   const setCookieHandler = () => {
     setCookie("cookiesPolicy", true, {
       path: "/",
-      sameSite: "Strict"
+      sameSite: "Strict",
     });
-    setCookiePolicy(true)
+    setCookiePolicy(true);
   };
 
   return (
     <div
       className={
-        cookiePolicy ? "hidden" : "fixed bottom-0 w-full flex justify-center"
+        cookiePolicy || !isVisible
+          ? "hidden"
+          : "fixed bottom-0 w-full flex justify-center"
       }
     >
       <div className="left-0 z-50  bg-white border-forest border  mb-4 mx-4 p-4 flex flex-col">
