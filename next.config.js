@@ -13,6 +13,7 @@ const nextConfig = {
   },
   images: {
     domains: ["silano-3r.fra1.digitaloceanspaces.com"],
+    unoptimized: true,
   },
 
 };
