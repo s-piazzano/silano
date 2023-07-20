@@ -179,7 +179,7 @@ Possibilità di spedizione in tutta Italia
                   informazioni?
                 </h2>
                 <h2 className="font-normal mt-2">
-                  Non esitare a contattarci. Siamo a tua disposione
+                  Non esitare a contattarci. Siamo a tua disposizione
                 </h2>
                 <a
                   target="_blank"
