@@ -53,7 +53,7 @@ I ricambi sono accuratamente smontati e catalogati in magazzino da personale qua
    `
     }
 
-Rispondiamo quotidianamente alle vostre e-mail e whatsapp.
+Rispondiamo quotidianamente alle vostre e-mail e Whatsapp.
   
 Possibilità di spedizione in tutta Italia
     `;
