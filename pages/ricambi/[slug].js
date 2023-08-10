@@ -143,7 +143,7 @@ Possibilità di spedizione in tutta Italia
                 >
                   <p>
                     I prezzi sui ricambi sono in continua evoluzione. Per
-                    garantirti il miglior prezzo contattaci direttamente per
+                    garantirti la migliore quotazione contattaci direttamente per
                     conoscere il prezzo.
                   </p>
                 </Collapse>
