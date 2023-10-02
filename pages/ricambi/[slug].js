@@ -1,4 +1,5 @@
 import Link from "next/link";
+ 
 
 import { useRouter } from "next/router";
 
@@ -47,7 +48,7 @@ Offriamo come ricambio usato funzionante ${sub[0].attributes.name} per:
             }`
         )
         .join("")}
-  
+
 Disponiamo di ricambi per carrozzeria, meccanica, parti elettriche ed elettroniche, selleria...
 I ricambi sono accuratamente smontati e catalogati in magazzino da personale qualificato.
    `
@@ -57,6 +58,21 @@ Rispondiamo quotidianamente alle vostre e-mail e Whatsapp.
   
 Possibilità di spedizione in tutta Italia
     `;
+    
+  };
+
+  const openWhatsapp = (e, product) => {
+    
+    e.preventDefault()
+    console.log('ciao')
+    const link = `https://wa.me/+393929898074?text=Ciao Silano SRL, ti contatto in merito all'annuncio ${
+      "https://www.silanosrl.it" + asPath
+    } (non modificare). ${
+      product.attributes.price
+        ? "Come posso procedere all'acquisto?"
+        : "Vorrei conoscere una quotazione."
+    }`;
+    push(link)
   };
 
   return (
@@ -143,36 +159,15 @@ Possibilità di spedizione in tutta Italia
                 >
                   <p>
                     I prezzi sui ricambi sono in continua evoluzione. Per
-                    garantirti la migliore quotazione contattaci direttamente per
-                    conoscere il prezzo.
+                    garantirti la migliore quotazione contattaci direttamente
+                    per conoscere il prezzo.
                   </p>
                 </Collapse>
               )}
               {/* Button */}
-              <Link
-                className="w-64 h-12 bg-forest text-white rounded-sm uppercase mt-4 flex justify-center items-center px-4"
-                href={`https://wa.me/+393929898074?text=Ciao Silano SRL, ti contatto in merito all'annuncio ${
-                  "https://www.silanosrl.it" + asPath
-                } (non modificare). ${
-                  product.attributes.price
-                    ? "Come posso procedere all'acquisto?"
-                    : "Vorrei conoscere una quotazione."
-                }`}
-                passHref={true}
-              >
-                <div className=" flex flex-col text-center items-center">
-                  <p className="">
-                    {product.attributes.price
-                      ? "ACQUISTA - WHATSAPP"
-                      : "CONTATTA IL MAGAZZINO"}
-                  </p>
-                  <p className="uppercase text-xs">
-                    {product.attributes.price
-                      ? product.attributes.price + " € + SPEDIZIONE"
-                      : ""}{" "}
-                  </p>
-                </div>
-              </Link>
+              <button name="acquista" className="w-64 h-12 bg-forest text-white rounded-sm uppercase mt-4 flex justify-center items-center px-4" onClick={(e)=>openWhatsapp(e, product)}>
+                ACQUISTA
+              </button>
               <div className="flex flex-col mt-8">
                 <h2 className="font-semibold">
                   Non sei sicuro della compatibilità o hai bisogno di maggiori
@@ -199,7 +194,6 @@ Possibilità di spedizione in tutta Italia
                   >
                     ricambisilano@gmail.com
                   </a>
-                  <a></a>
                 </div>
               </div>
             </div>
