@@ -44,6 +44,7 @@ export default function Home({ menu, homepage, footerLayout }) {
     <Layout menu={menu} footerLayout={footerLayout}>
       <Head>
         <title>{homepage.seo.title}</title>
+        <meta name="description" content={homepage.seo?.description} />
         <meta property="og:title" content={homepage.seo?.title} />
         <meta property="og:description" content={homepage.seo?.description} />
         <meta
