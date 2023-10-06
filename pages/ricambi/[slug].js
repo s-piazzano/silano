@@ -1,5 +1,4 @@
 import Link from "next/link";
- 
 
 import { useRouter } from "next/router";
 
@@ -58,13 +57,11 @@ Rispondiamo quotidianamente alle vostre e-mail e Whatsapp.
   
 Possibilità di spedizione in tutta Italia
     `;
-    
   };
 
   const openWhatsapp = (e, product) => {
-    
-    e.preventDefault()
-    console.log('ciao')
+    e.preventDefault();
+    console.log("ciao");
     const link = `https://wa.me/+393929898074?text=Ciao Silano SRL, ti contatto in merito all'annuncio ${
       "https://www.silanosrl.it" + asPath
     } (non modificare). ${
@@ -72,7 +69,7 @@ Possibilità di spedizione in tutta Italia
         ? "Come posso procedere all'acquisto?"
         : "Vorrei conoscere una quotazione."
     }`;
-    push(link)
+    push(link);
   };
 
   return (
@@ -103,6 +100,14 @@ Possibilità di spedizione in tutta Italia
                       product.attributes.motorType
                     )
               }
+            />
+            <meta
+              name="description"
+              content={generateDescription(
+                product.attributes.sub_category.data,
+                product.attributes.compatibilities,
+                product.attributes.description
+              )}
             />
             <meta
               property="og:description"
@@ -165,7 +170,11 @@ Possibilità di spedizione in tutta Italia
                 </Collapse>
               )}
               {/* Button */}
-              <button name="acquista" className="w-64 h-12 bg-forest text-white rounded-sm uppercase mt-4 flex justify-center items-center px-4" onClick={(e)=>openWhatsapp(e, product)}>
+              <button
+                name="acquista"
+                className="w-64 h-12 bg-forest text-white rounded-sm uppercase mt-4 flex justify-center items-center px-4"
+                onClick={(e) => openWhatsapp(e, product)}
+              >
                 ACQUISTA
               </button>
               <div className="flex flex-col mt-8">

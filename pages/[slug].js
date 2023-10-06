@@ -22,6 +22,7 @@ export default function Page({
       <Head>
         <title>Silano SRL - {page.title}</title>
         <meta property="og:title" content={page.seo?.title} />
+        <meta name="description" content={homepage.seo?.description} />
         <meta property="og:description" content={page.seo?.description} />
         <meta
           property="og:image"
