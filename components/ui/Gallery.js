@@ -2,7 +2,6 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function Gallery({ images }) {
-
   const [imageUrl, setImageUrl] = useState(
     images.data.length
       ? images.data[0].attributes.formats.small.url
@@ -17,19 +16,29 @@ export default function Gallery({ images }) {
         width={800}
         height={400}
         className="cursor-pointer "
-       
       />
       <div className="flex pt-2 overflow-y-auto">
         {images.data.map((x) => {
+          console.log(x);
           return (
             <div
               key={x.id}
               className="cursor-pointer pr-2"
-              onClick={() => setImageUrl(x.attributes.formats.small.url)}
+              onClick={() =>
+                setImageUrl(
+                  x.attributes.formats.small?.url
+                    ? x.attributes.formats.small.url
+                    : x.attributes.url
+                )
+              }
             >
               <Image
-                src={x.attributes.formats.small.url}
-                alt="Picture of the author"
+                src={
+                  x.attributes.formats.small?.url
+                    ? x.attributes.formats.small.url
+                    : x.attributes.url
+                }
+                alt="Ricambio usato"
                 width={100}
                 height={45}
               />
